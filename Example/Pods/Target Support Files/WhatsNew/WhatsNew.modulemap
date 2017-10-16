@@ -1,0 +1,6 @@
+framework module WhatsNew {
+  umbrella header "WhatsNew-umbrella.h"
+
+  export *
+  module * { export * }
+}

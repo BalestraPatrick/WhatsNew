@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'WhatsNew_Example' do
+  pod 'WhatsNew', :path => '../'
+
+  target 'WhatsNew_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

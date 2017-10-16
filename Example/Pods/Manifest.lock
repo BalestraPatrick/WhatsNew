@@ -1,0 +1,16 @@
+PODS:
+  - WhatsNew (0.1.0)
+
+DEPENDENCIES:
+  - WhatsNew (from `../`)
+
+EXTERNAL SOURCES:
+  WhatsNew:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  WhatsNew: 84f89c9a2aef83d118c931f631184b12f2c4cf06
+
+PODFILE CHECKSUM: f7e23ca212f99a208ef47c6d7ab74bbe03bb82de
+
+COCOAPODS: 1.2.1
