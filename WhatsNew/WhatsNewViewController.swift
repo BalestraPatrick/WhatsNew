@@ -13,29 +13,51 @@ public enum WhatsNewItem {
     case image(title: String, subtitle: String, image: UIImage)
 }
 
+struct Constants {
+    static let bundle = Bundle(for: WhatsNewViewController.self)
+    static let appVersion = Bundle.main.infoDictionary?["CFBundleInfoDictionaryVersion"] as? String
+    static let userDefaultsKey = "LatestAppVersionPresented"
+    static var canPresent = true // (UserDefaults.standard.string(forKey: userDefaultsKey) ?? "") != appVersion
+}
+
 public class WhatsNewViewController: UIViewController {
 
     public var onDismissal: (() -> Void)?
+    private let items: [WhatsNewItem]
 
-    private struct Constants {
-        static let bundle = Bundle(for: WhatsNewViewController.self)
-        static let appVersion = Bundle.main.infoDictionary?["CFBundleInfoDictionaryVersion"] as? String
-        static let userDefaultsKey = "LatestAppVersionPresented"
-        static var canPresent = true // (UserDefaults.standard.string(forKey: userDefaultsKey) ?? "") != appVersion
-    }
+    @IBOutlet private weak var stackView: UIStackView!
 
     public init?(items: [WhatsNewItem]) {
         guard Constants.canPresent && items.count > 0 else { return nil }
+        self.items = items
         super.init(nibName: "WhatsNew", bundle: Constants.bundle)
-        setUp()
     }
 
     required public init?(coder aDecoder: NSCoder) {
         fatalError("Unsupported, please use init?(items:)")
     }
 
-    private func setUp() {
-        // TODO: set up view hierarchy
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+        setUp(with: items)
+    }
+
+    private func setUp(with items: [WhatsNewItem]) {
+        items.forEach { item in
+            let view: UIView
+            switch item {
+            case .image(let title, let subtitle, let image):
+                let itemView = WhatsNewItemImageView.loadFromNib()
+                itemView.set(image: image, title: title, subtitle: subtitle)
+                view = itemView
+
+            case .text(let title, let subtitle):
+                let itemView = WhatsNewItemTextView.loadFromNib()
+                itemView.set(title: title, subtitle: subtitle)
+                view = itemView
+            }
+            stackView.addArrangedSubview(view)
+        }
     }
 
     @IBAction func `continue`(_ sender: Any) {

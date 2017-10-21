@@ -13,6 +13,11 @@
 		646113EE73660F5B4AF4E6B2ABF21369 /* WhatsNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A84CDC6D0732F461A7DE8B24B58879 /* WhatsNewViewController.swift */; };
 		7EC1CA6ABF0742DAB7E5B4A25F28DEC3 /* WhatsNew-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D20331185AC38D6F96ABE34563A7B9 /* WhatsNew-dummy.m */; };
 		8B8520A1545AECB69AD2BD14C31E84AA /* WhatsNew-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BEB6F444263DE354F76D1B64634FB43A /* WhatsNew-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AEDF764D1F9BF7F800B4DA1E /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDF764C1F9BF7F800B4DA1E /* NibLoadable.swift */; };
+		AEF432941F991F9E0084D8AD /* WhatsNewItemTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF432931F991F9E0084D8AD /* WhatsNewItemTextView.swift */; };
+		AEF432961F991FAB0084D8AD /* WhatsNewItemTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEF432951F991FAB0084D8AD /* WhatsNewItemTextView.xib */; };
+		AEF432981F991FB30084D8AD /* WhatsNewItemImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEF432971F991FB30084D8AD /* WhatsNewItemImageView.xib */; };
+		AEF4329A1F991FBD0084D8AD /* WhatsNewItemImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF432991F991FBD0084D8AD /* WhatsNewItemImageView.swift */; };
 		B42DDBB405B841CD84A7BCD3413EC9C7 /* WhatsNew.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5614B6E512636522BFE74654093B540E /* WhatsNew.xib */; };
 		D3A3E0DA65E965859A6EFB0AD020C0A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		F3F4CCC88A0C872F5FEC8C9C5F5D2414 /* Pods-WhatsNew_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 435663F887F471CB7870C8357D6AFD5E /* Pods-WhatsNew_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -52,6 +57,11 @@
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		97D7E03997430872AFB5E5D9C0BE1597 /* Pods-WhatsNew_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-WhatsNew_Example.modulemap"; sourceTree = "<group>"; };
 		9C2555FD2C6EF079B15FDAA971317E07 /* WhatsNew.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = WhatsNew.modulemap; sourceTree = "<group>"; };
+		AEDF764C1F9BF7F800B4DA1E /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		AEF432931F991F9E0084D8AD /* WhatsNewItemTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewItemTextView.swift; sourceTree = "<group>"; };
+		AEF432951F991FAB0084D8AD /* WhatsNewItemTextView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WhatsNewItemTextView.xib; sourceTree = "<group>"; };
+		AEF432971F991FB30084D8AD /* WhatsNewItemImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WhatsNewItemImageView.xib; sourceTree = "<group>"; };
+		AEF432991F991FBD0084D8AD /* WhatsNewItemImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewItemImageView.swift; sourceTree = "<group>"; };
 		B281056ED9A1A17E568C9D211E32AD02 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B583031B96F6FD8D9B7534E2555F4589 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B58F457791C9C232882EC7524020D47E /* Pods-WhatsNew_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WhatsNew_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				5614B6E512636522BFE74654093B540E /* WhatsNew.xib */,
+				AEF432951F991FAB0084D8AD /* WhatsNewItemTextView.xib */,
+				AEF432971F991FB30084D8AD /* WhatsNewItemImageView.xib */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -174,6 +186,8 @@
 		8390020447C7BF7B83DBB94EFA11FF53 /* WhatsNew */ = {
 			isa = PBXGroup;
 			children = (
+				AEF4329B1F991FC40084D8AD /* Items */,
+				AEDF764E1F9BF7FC00B4DA1E /* Extensions */,
 				D7A84CDC6D0732F461A7DE8B24B58879 /* WhatsNewViewController.swift */,
 			);
 			path = WhatsNew;
@@ -204,6 +218,23 @@
 				85DD6A78AF18A7EB872815F782C58BD4 /* Pods-WhatsNew_Tests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		AEDF764E1F9BF7FC00B4DA1E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AEDF764C1F9BF7F800B4DA1E /* NibLoadable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AEF4329B1F991FC40084D8AD /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				AEF432931F991F9E0084D8AD /* WhatsNewItemTextView.swift */,
+				AEF432991F991FBD0084D8AD /* WhatsNewItemImageView.swift */,
+			);
+			path = Items;
 			sourceTree = "<group>";
 		};
 		B99D94E0361A868C56C793635968C2C5 /* WhatsNew */ = {
@@ -357,6 +388,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEF432981F991FB30084D8AD /* WhatsNewItemImageView.xib in Resources */,
+				AEF432961F991FAB0084D8AD /* WhatsNewItemTextView.xib in Resources */,
 				B42DDBB405B841CD84A7BCD3413EC9C7 /* WhatsNew.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,7 +417,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEF432941F991F9E0084D8AD /* WhatsNewItemTextView.swift in Sources */,
+				AEF4329A1F991FBD0084D8AD /* WhatsNewItemImageView.swift in Sources */,
 				7EC1CA6ABF0742DAB7E5B4A25F28DEC3 /* WhatsNew-dummy.m in Sources */,
+				AEDF764D1F9BF7F800B4DA1E /* NibLoadable.swift in Sources */,
 				646113EE73660F5B4AF4E6B2ABF21369 /* WhatsNewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

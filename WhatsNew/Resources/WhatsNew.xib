@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,6 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WhatsNewViewController" customModule="WhatsNew" customModuleProvider="target">
             <connections>
+                <outlet property="stackView" destination="dhQ-Nl-Wc2" id="3ae-r4-Jzl"/>
                 <outlet property="view" destination="iN0-l3-epB" id="4KS-gg-hI5"/>
             </connections>
         </placeholder>
@@ -26,7 +26,7 @@
                     <rect key="frame" x="0.0" y="20" width="375" height="559"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dhQ-Nl-Wc2">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="05P-IR-imh">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
@@ -57,68 +57,6 @@
                                         <constraint firstItem="DFT-ZF-fEm" firstAttribute="top" secondItem="05P-IR-imh" secondAttribute="top" id="jBS-xN-frl"/>
                                         <constraint firstItem="DFT-ZF-fEm" firstAttribute="centerX" secondItem="05P-IR-imh" secondAttribute="centerX" id="taW-uj-DO8"/>
                                         <constraint firstAttribute="bottom" secondItem="DFT-ZF-fEm" secondAttribute="bottom" id="v3q-gY-OKe"/>
-                                    </constraints>
-                                </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rfr-Df-WvA">
-                                    <rect key="frame" x="0.0" y="90" width="375" height="142.5"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Automatically use your preferred font size specified in the Settings app." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOe-cd-l9f">
-                                            <rect key="frame" x="33" y="-7112" width="309" height="7244.5"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dynamic-font" translatesAutoresizingMaskIntoConstraints="NO" id="igU-nM-Ukp">
-                                            <rect key="frame" x="33" y="-7172" width="50" height="50"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="50" id="F26-iW-ZLE"/>
-                                                <constraint firstAttribute="width" secondItem="igU-nM-Ukp" secondAttribute="height" multiplier="1:1" id="Fzu-IB-Y36"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dynamic Font Size" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="noz-EM-5h3">
-                                            <rect key="frame" x="98" y="-7162.5" width="244" height="31.5"/>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <constraints>
-                                        <constraint firstItem="EOe-cd-l9f" firstAttribute="top" secondItem="igU-nM-Ukp" secondAttribute="bottom" constant="10" id="1YU-c5-NU2"/>
-                                        <constraint firstItem="noz-EM-5h3" firstAttribute="trailing" secondItem="Rfr-Df-WvA" secondAttribute="trailingMargin" constant="-25" id="41G-gC-Q2h"/>
-                                        <constraint firstItem="igU-nM-Ukp" firstAttribute="top" secondItem="Rfr-Df-WvA" secondAttribute="topMargin" id="5o7-6j-reQ"/>
-                                        <constraint firstItem="noz-EM-5h3" firstAttribute="centerY" secondItem="igU-nM-Ukp" secondAttribute="centerY" id="5tY-Pt-72r"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="EOe-cd-l9f" secondAttribute="trailing" constant="25" id="HLg-yf-vVv"/>
-                                        <constraint firstAttribute="bottom" secondItem="EOe-cd-l9f" secondAttribute="bottom" constant="10" id="V7b-Vv-FKG"/>
-                                        <constraint firstItem="EOe-cd-l9f" firstAttribute="leading" secondItem="Rfr-Df-WvA" secondAttribute="leadingMargin" constant="25" id="Yq7-6r-gG4"/>
-                                        <constraint firstItem="igU-nM-Ukp" firstAttribute="leading" secondItem="Rfr-Df-WvA" secondAttribute="leadingMargin" constant="25" id="a7D-eV-0ah"/>
-                                        <constraint firstItem="noz-EM-5h3" firstAttribute="leading" secondItem="igU-nM-Ukp" secondAttribute="trailing" constant="15" id="qEb-ZA-vrK"/>
-                                    </constraints>
-                                </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RAj-RR-Adh">
-                                    <rect key="frame" x="0.0" y="232.5" width="375" height="142.5"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Automatically use your preferred font size specified in the Settings app." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3f8-Ga-eeJ">
-                                            <rect key="frame" x="33" y="68" width="309" height="64.5"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dynamic Font Size" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGd-cf-35i">
-                                            <rect key="frame" x="33" y="17.5" width="213.5" height="31.5"/>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <constraints>
-                                        <constraint firstItem="3f8-Ga-eeJ" firstAttribute="leading" secondItem="RAj-RR-Adh" secondAttribute="leadingMargin" constant="25" id="FJ6-g7-ObZ"/>
-                                        <constraint firstItem="BGd-cf-35i" firstAttribute="top" secondItem="RAj-RR-Adh" secondAttribute="top" constant="17.5" id="GPu-pF-kd6"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="3f8-Ga-eeJ" secondAttribute="trailing" constant="25" id="WdQ-Lu-mLC"/>
-                                        <constraint firstAttribute="bottom" secondItem="3f8-Ga-eeJ" secondAttribute="bottom" constant="10" id="hx5-Jm-6ap"/>
-                                        <constraint firstItem="BGd-cf-35i" firstAttribute="leading" secondItem="RAj-RR-Adh" secondAttribute="leadingMargin" constant="25" id="p1g-Xf-rrV"/>
-                                        <constraint firstItem="3f8-Ga-eeJ" firstAttribute="top" secondItem="BGd-cf-35i" secondAttribute="bottom" constant="19" id="pW3-M1-ckf"/>
                                     </constraints>
                                 </view>
                             </subviews>
@@ -185,7 +123,4 @@
             <point key="canvasLocation" x="34.5" y="53.5"/>
         </view>
     </objects>
-    <resources>
-        <image name="dynamic-font" width="16" height="16"/>
-    </resources>
 </document>

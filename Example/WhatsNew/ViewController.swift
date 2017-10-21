@@ -14,7 +14,10 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        if let viewController = WhatsNewViewController(items: [WhatsNewItem.text(title: "Hello", subtitle: "There are many new features.")]) {
+        if let viewController = WhatsNewViewController(items: [
+            WhatsNewItem.text(title: "Hello", subtitle: "There are many new features."),
+            WhatsNewItem.image(title: "Hello", subtitle: "There are many new features.", image: UIImage())
+            ]) {
             present(viewController, animated: true, completion: nil)
         }
     }
