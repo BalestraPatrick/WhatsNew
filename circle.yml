@@ -6,8 +6,8 @@ jobs:
       xcode: "9.0"
     steps:
       - checkout
-      - working_directory: Example
       - run:
+          working_directory: Example
           name: Run tests
           command: fastlane scan
           environment:
