@@ -1,15 +1,7 @@
-#
-# Be sure to run `pod lib lint WhatsNew.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = 'WhatsNew'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of WhatsNew.'
+  s.summary          = 'Showcase new features after an app update similar to Pages, Numbers and Keynote.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,22 +10,19 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+WhatsNew automatically displays a short description of the new features when users update your app. This is similar to what happens in Apple's apps like Pages, Numbers, Keynote, iMovie and TestFlight.
+Simply list your new features (with optional icons), customize the appeareance and when to show it (only on major updates for example).
                        DESC
 
   s.homepage         = 'https://github.com/BalestraPatrick/WhatsNew'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'BalestraPatrick' => 'me@patrickbalestra.com' }
+  s.author           = { 'Patrick Balestra' => 'me@patrickbalestra.com' }
   s.source           = { :git => 'https://github.com/BalestraPatrick/WhatsNew.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.social_media_url = 'https://twitter.com/BalestraPatrick'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.3'
 
   s.source_files = 'WhatsNew/**/*.swift'
   s.resources = 'WhatsNew/Resources/*.*'
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
