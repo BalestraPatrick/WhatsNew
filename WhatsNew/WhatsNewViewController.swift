@@ -8,21 +8,47 @@
 
 import UIKit
 
-struct Constants {
-    static let bundle = Bundle(for: WhatsNewViewController.self)
-    static let appVersion = Bundle.main.infoDictionary?["CFBundleInfoDictionaryVersion"] as? String
-    static let userDefaultsKey = "LatestAppVersionPresented"
-    static var canPresent = true // (UserDefaults.standard.string(forKey: userDefaultsKey) ?? "") != appVersion
-}
-
 public class WhatsNewViewController: UIViewController {
 
+    /// Defines when to present the What's New view controller. Check the `PresentationOption` enum for more details.
+    public var presentationOption: PresentationOption = .always
     /// Closure invoked when the user dismisses the view controller.
     public var onDismissal: (() -> Void)?
+    /// Text of the top title.
+    public var titleText: String = "What's New" {
+        didSet {
+            titleLabel.text = titleText
+        }
+    }
+    /// Color of the top title.
+    public var titleColor: UIColor = .black {
+        didSet {
+            titleLabel.textColor = titleColor
+        }
+    }
+    /// Text of the bottom button that dismisses the view controller.
+    public var buttonText: String = "Continue" {
+        didSet {
+            continueButton.setTitle(buttonText, for: .normal)
+        }
+    }
+    /// Text color of the bottom button that dismisses the view controller.
+    public var buttonTextColor: UIColor = .yellow {
+        didSet {
+            continueButton.setTitleColor(buttonTextColor, for: .normal)
+        }
+    }
+    public var buttonBackgroundColor: UIColor = .black {
+        didSet {
+            continueButton.backgroundColor = buttonBackgroundColor
+        }
+    }
 
     private let items: [WhatsNewItem]
 
+    @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var stackView: UIStackView!
+    @IBOutlet private weak var continueButton: UIButton!
 
     public init(items: [WhatsNewItem]) {
         self.items = items
@@ -30,7 +56,7 @@ public class WhatsNewViewController: UIViewController {
     }
 
     required public init?(coder aDecoder: NSCoder) {
-        fatalError("Unsupported, please use init(items:)")
+        fatalError("Unsupported initializer, please use init(items:)")
     }
 
     public override func viewDidLoad() {
@@ -39,6 +65,7 @@ public class WhatsNewViewController: UIViewController {
     }
 
     public func presentIfNeeded(on parentViewController: UIViewController) {
+        guard Constants.canPresent else { return }
         parentViewController.present(self, animated: true, completion: nil)
     }
 
@@ -60,7 +87,7 @@ public class WhatsNewViewController: UIViewController {
         }
     }
 
-    @IBAction func `continue`(_ sender: Any) {
+    @IBAction func `continue`() {
         UserDefaults.standard.set(Constants.appVersion, forKey: Constants.userDefaultsKey)
         dismiss(animated: true, completion: onDismissal)
     }

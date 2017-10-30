@@ -23,7 +23,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="139"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="night" translatesAutoresizingMaskIntoConstraints="NO" id="YUp-od-Q3r">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YUp-od-Q3r">
                     <rect key="frame" x="30" y="10" width="50" height="50"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="3Lc-El-pzp"/>
@@ -61,7 +61,4 @@
             <point key="canvasLocation" x="33.5" y="-209.5"/>
         </view>
     </objects>
-    <resources>
-        <image name="night" width="57" height="57"/>
-    </resources>
 </document>

@@ -12,7 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WhatsNewViewController" customModule="WhatsNew" customModuleProvider="target">
             <connections>
+                <outlet property="continueButton" destination="sAB-F2-Y7K" id="oQ9-t7-PKz"/>
                 <outlet property="stackView" destination="dhQ-Nl-Wc2" id="3ae-r4-Jzl"/>
+                <outlet property="titleLabel" destination="fKN-eO-Tbq" id="Lmq-Sz-Ocf"/>
                 <outlet property="view" destination="iN0-l3-epB" id="4KS-gg-hI5"/>
             </connections>
         </placeholder>
@@ -93,7 +95,7 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                             <connections>
-                                <action selector="continue:" destination="-1" eventType="touchUpInside" id="h0d-db-k9R"/>
+                                <action selector="continue" destination="-1" eventType="touchUpInside" id="Jck-a8-q0C"/>
                             </connections>
                         </button>
                     </subviews>
