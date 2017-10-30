@@ -1,7 +1,9 @@
 version: 2
 
 jobs:
-  build-and-test:
+  build:
+    macos:
+      xcode: "9.0"
     steps:
       - checkout
       - run:
