@@ -13,6 +13,7 @@
 		646113EE73660F5B4AF4E6B2ABF21369 /* WhatsNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A84CDC6D0732F461A7DE8B24B58879 /* WhatsNewViewController.swift */; };
 		7EC1CA6ABF0742DAB7E5B4A25F28DEC3 /* WhatsNew-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D20331185AC38D6F96ABE34563A7B9 /* WhatsNew-dummy.m */; };
 		8B8520A1545AECB69AD2BD14C31E84AA /* WhatsNew-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BEB6F444263DE354F76D1B64634FB43A /* WhatsNew-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE0A06BC1FA7575600BB565D /* WhatsNewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0A06BB1FA7575600BB565D /* WhatsNewItem.swift */; };
 		AEDF764D1F9BF7F800B4DA1E /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDF764C1F9BF7F800B4DA1E /* NibLoadable.swift */; };
 		AEF432941F991F9E0084D8AD /* WhatsNewItemTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF432931F991F9E0084D8AD /* WhatsNewItemTextView.swift */; };
 		AEF432961F991FAB0084D8AD /* WhatsNewItemTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEF432951F991FAB0084D8AD /* WhatsNewItemTextView.xib */; };
@@ -57,6 +58,7 @@
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		97D7E03997430872AFB5E5D9C0BE1597 /* Pods-WhatsNew_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-WhatsNew_Example.modulemap"; sourceTree = "<group>"; };
 		9C2555FD2C6EF079B15FDAA971317E07 /* WhatsNew.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = WhatsNew.modulemap; sourceTree = "<group>"; };
+		AE0A06BB1FA7575600BB565D /* WhatsNewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewItem.swift; sourceTree = "<group>"; };
 		AEDF764C1F9BF7F800B4DA1E /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		AEF432931F991F9E0084D8AD /* WhatsNewItemTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewItemTextView.swift; sourceTree = "<group>"; };
 		AEF432951F991FAB0084D8AD /* WhatsNewItemTextView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WhatsNewItemTextView.xib; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 		AEF4329B1F991FC40084D8AD /* Items */ = {
 			isa = PBXGroup;
 			children = (
+				AE0A06BB1FA7575600BB565D /* WhatsNewItem.swift */,
 				AEF432931F991F9E0084D8AD /* WhatsNewItemTextView.swift */,
 				AEF432991F991FBD0084D8AD /* WhatsNewItemImageView.swift */,
 			);
@@ -418,6 +421,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEF432941F991F9E0084D8AD /* WhatsNewItemTextView.swift in Sources */,
+				AE0A06BC1FA7575600BB565D /* WhatsNewItem.swift in Sources */,
 				AEF4329A1F991FBD0084D8AD /* WhatsNewItemImageView.swift in Sources */,
 				7EC1CA6ABF0742DAB7E5B4A25F28DEC3 /* WhatsNew-dummy.m in Sources */,
 				AEDF764D1F9BF7F800B4DA1E /* NibLoadable.swift in Sources */,

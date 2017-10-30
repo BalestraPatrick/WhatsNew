@@ -14,11 +14,11 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        if let viewController = WhatsNewViewController(items: [
+        let whatsNew = WhatsNewViewController(items: [
             WhatsNewItem.text(title: "Hello", subtitle: "There are many new features."),
-            WhatsNewItem.image(title: "Hello", subtitle: "There are many new features.", image: UIImage())
-            ]) {
-            present(viewController, animated: true, completion: nil)
-        }
+            WhatsNewItem.image(title: "Hello", subtitle: "There are many new features.", image: #imageLiteral(resourceName: "love")),
+            WhatsNewItem.image(title: "Hello", subtitle: "There are many new features.", image: #imageLiteral(resourceName: "threed"))
+        ])
+        whatsNew.presentIfNeeded(on: self)
     }
 }

@@ -17,14 +17,8 @@ extension NibLoadable where Self: UIView {
             if let view = view as? UIView {
                 view.translatesAutoresizingMaskIntoConstraints = false
                 owner.addSubview(view)
-                layoutAttributes.forEach { attribute in
-                    owner.addConstraint(NSLayoutConstraint(item: view,
-                                                           attribute: attribute,
-                                                           relatedBy: .equal,
-                                                           toItem: owner,
-                                                           attribute: attribute,
-                                                           multiplier: 1,
-                                                           constant: 0.0))
+                layoutAttributes.forEach {
+                    owner.addConstraint(NSLayoutConstraint(item: view, attribute: $0, relatedBy: .equal, toItem: owner, attribute: $0, multiplier: 1, constant: 0.0))
                 }
             }
         }

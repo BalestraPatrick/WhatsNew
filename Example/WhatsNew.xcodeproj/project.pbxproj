@@ -29,10 +29,10 @@
 
 /* Begin PBXFileReference section */
 		07764618130D3205FA79451C /* Pods-WhatsNew_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsNew_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhatsNew_Example/Pods-WhatsNew_Example.release.xcconfig"; sourceTree = "<group>"; };
-		24934DEAAFFF4DBEE55AA3B1 /* WhatsNew.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = WhatsNew.podspec; path = ../WhatsNew.podspec; sourceTree = "<group>"; };
+		24934DEAAFFF4DBEE55AA3B1 /* WhatsNew.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = WhatsNew.podspec; path = ../WhatsNew.podspec; sourceTree = "<group>"; };
 		30B8AE31017254FE1744E999 /* Pods_WhatsNew_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatsNew_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D534311749EA40E5B0F583B /* Pods-WhatsNew_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsNew_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhatsNew_Tests/Pods-WhatsNew_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		54557CED95D7D3C6167713C7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		54557CED95D7D3C6167713C7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* WhatsNew_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsNew_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,7 +44,7 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		669AB9EAD59978E937498CBD /* Pods-WhatsNew_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsNew_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhatsNew_Example/Pods-WhatsNew_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		B2C5D20E2D3C479AE2BB3870 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		B2C5D20E2D3C479AE2BB3870 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		C2F71234FC605F13D6858D4D /* Pods_WhatsNew_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatsNew_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F03A69224BA466E1CE2417 /* Pods-WhatsNew_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsNew_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhatsNew_Tests/Pods-WhatsNew_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -537,10 +537,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F4F03A69224BA466E1CE2417 /* Pods-WhatsNew_Tests.debug.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -558,10 +555,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4D534311749EA40E5B0F583B /* Pods-WhatsNew_Tests.release.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";

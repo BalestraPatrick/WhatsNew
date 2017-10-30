@@ -8,11 +8,6 @@
 
 import UIKit
 
-public enum WhatsNewItem {
-    case text(title: String, subtitle: String)
-    case image(title: String, subtitle: String, image: UIImage)
-}
-
 struct Constants {
     static let bundle = Bundle(for: WhatsNewViewController.self)
     static let appVersion = Bundle.main.infoDictionary?["CFBundleInfoDictionaryVersion"] as? String
@@ -27,19 +22,22 @@ public class WhatsNewViewController: UIViewController {
 
     @IBOutlet private weak var stackView: UIStackView!
 
-    public init?(items: [WhatsNewItem]) {
-        guard Constants.canPresent && items.count > 0 else { return nil }
+    public init(items: [WhatsNewItem]) {
         self.items = items
         super.init(nibName: "WhatsNew", bundle: Constants.bundle)
     }
 
     required public init?(coder aDecoder: NSCoder) {
-        fatalError("Unsupported, please use init?(items:)")
+        fatalError("Unsupported, please use init(items:)")
     }
 
     public override func viewDidLoad() {
         super.viewDidLoad()
         setUp(with: items)
+    }
+
+    public func presentIfNeeded(on parentViewController: UIViewController) {
+        parentViewController.present(self, animated: true, completion: nil)
     }
 
     private func setUp(with items: [WhatsNewItem]) {
