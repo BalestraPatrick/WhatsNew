@@ -1,6 +1,6 @@
 # WhatsNew
 
-[![CI Status](http://img.shields.io/travis/BalestraPatrick/WhatsNew.svg?style=flat)](https://travis-ci.org/BalestraPatrick/WhatsNew)
+[![CircleCI](https://circleci.com/gh/BalestraPatrick/WhatsNew.svg?style=svg)](https://circleci.com/gh/BalestraPatrick/WhatsNew)
 [![Version](https://img.shields.io/cocoapods/v/WhatsNew.svg?style=flat)](http://cocoapods.org/pods/WhatsNew)
 [![License](https://img.shields.io/cocoapods/l/WhatsNew.svg?style=flat)](http://cocoapods.org/pods/WhatsNew)
 [![Platform](https://img.shields.io/cocoapods/p/WhatsNew.svg?style=flat)](http://cocoapods.org/pods/WhatsNew)

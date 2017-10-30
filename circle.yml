@@ -3,15 +3,13 @@ version: 2
 jobs:
   build:
     macos:
-      xcode: "9.0.0"
-    environment:
-      CIRCLE_TEST_RESULTS: $HOME/test-results
-    shell: /bin/bash --login -eo pipefail
+      xcode: "9.0"
     steps:
       - checkout
-
       - run:
-          name: Check PR Metadata
-          command: bundle exec danger || echo "danger failed"
-
-      - run: bundle exec fastlane test
+          working_directory: Example
+          name: Run tests
+          command: fastlane scan
+          environment:
+            SCAN_DEVICE: iPhone 8
+            SCAN_SCHEME: WhatsNew-Example
