@@ -13,3 +13,5 @@ jobs:
           environment:
             SCAN_DEVICE: iPhone 8
             SCAN_SCHEME: WhatsNew-Example
+      - store_test_results:
+          path: /Users/distiller/test-results
