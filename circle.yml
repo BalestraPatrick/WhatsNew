@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: Run tests
-          command: fastlane scan
+          command: cd Example && fastlane scan
           environment:
             SCAN_DEVICE: iPhone 8
             SCAN_SCHEME: WhatsNew-Example
