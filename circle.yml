@@ -6,9 +6,10 @@ jobs:
       xcode: "9.0"
     steps:
       - checkout
+      - working_directory: Example
       - run:
           name: Run tests
-          command: cd Example && fastlane scan
+          command: fastlane scan
           environment:
             SCAN_DEVICE: iPhone 8
             SCAN_SCHEME: WhatsNew-Example
