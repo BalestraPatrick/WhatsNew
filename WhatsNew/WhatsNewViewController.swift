@@ -27,6 +27,8 @@ public class WhatsNewViewController: UIViewController {
             titleLabel.textColor = titleColor
         }
     }
+    /// Text color of the feature items.
+    public var itemTextColor: UIColor = .black
     /// Text of the bottom button that dismisses the view controller.
     public var buttonText: String = "Continue" {
         didSet {
@@ -76,16 +78,21 @@ public class WhatsNewViewController: UIViewController {
             switch item {
             case .image(let title, let subtitle, let image):
                 let itemView = WhatsNewItemImageView.loadFromNib()
-                itemView.set(image: image, title: title, subtitle: subtitle)
+                itemView.set(image: image, title: title, subtitle: subtitle, textColor: itemTextColor)
                 view = itemView
-
             case .text(let title, let subtitle):
                 let itemView = WhatsNewItemTextView.loadFromNib()
-                itemView.set(title: title, subtitle: subtitle)
+                itemView.set(title: title, subtitle: subtitle, textColor: itemTextColor)
                 view = itemView
             }
             stackView.addArrangedSubview(view)
         }
+
+        titleLabel.text = titleText
+        titleLabel.textColor = titleColor
+        continueButton.setTitle(buttonText, for: .normal)
+        continueButton.setTitleColor(buttonTextColor, for: .normal)
+        continueButton.backgroundColor = buttonBackgroundColor
     }
 
     @IBAction func `continue`() {

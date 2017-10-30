@@ -13,9 +13,11 @@ class WhatsNewItemImageView: UIView, NibLoadable {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
 
-    func set(image: UIImage, title: String, subtitle: String) {
+    func set(image: UIImage, title: String, subtitle: String, textColor: UIColor) {
         imageView.image = image
         titleLabel.text = title
+        titleLabel.textColor = textColor
         subtitleLabel.text = subtitle
+        subtitleLabel.textColor = textColor
     }
 }

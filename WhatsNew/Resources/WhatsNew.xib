@@ -73,21 +73,15 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wON-2C-CFX">
                     <rect key="frame" x="0.0" y="577" width="375" height="50"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sAB-F2-Y7K">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sAB-F2-Y7K">
                             <rect key="frame" x="30" y="2.5" width="315" height="45"/>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="mOy-4M-bMK"/>
                             </constraints>
-                            <state key="normal">
-                                <attributedString key="attributedTitle">
-                                    <fragment content="Continue">
-                                        <attributes>
-                                            <color key="NSColor" red="0.94509803920000002" green="0.92941176469999998" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="18" name="SFUIDisplay-Bold"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                            <fontDescription key="fontDescription" name="SFUIDisplay-Bold" family="SF UI Display" pointSize="18"/>
+                            <state key="normal" title="Continue">
+                                <color key="titleColor" red="0.94509803920000002" green="0.92941176469999998" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
