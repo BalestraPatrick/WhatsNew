@@ -4,17 +4,12 @@ jobs:
   build:
     macos:
       xcode: "9.0"
-    environment:
-      CIRCLE_TEST_RESULTS: $HOME/test-results
     steps:
       - checkout
       - run:
-          command: mkdir -p $CIRCLE_TEST_RESULTS
           working_directory: Example
           name: Run tests
           command: fastlane scan
           environment:
             SCAN_DEVICE: iPhone 8
             SCAN_SCHEME: WhatsNew-Example
-      - store_test_results:
-          path: $HOME/project/Example
