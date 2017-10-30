@@ -8,10 +8,11 @@
 
 import UIKit
 
+/// Shows new features added in this app update.
 public class WhatsNewViewController: UIViewController {
 
     /// Defines when to present the What's New view controller. Check the `PresentationOption` enum for more details.
-    public var presentationOption: PresentationOption = .always
+    public var presentationOption: PresentationOption = .majorVersion
     /// Closure invoked when the user dismisses the view controller.
     public var onDismissal: (() -> Void)?
     /// Text of the top title.
@@ -38,6 +39,7 @@ public class WhatsNewViewController: UIViewController {
             continueButton.setTitleColor(buttonTextColor, for: .normal)
         }
     }
+    /// Background color of the bottom button that dismisses the view controller.
     public var buttonBackgroundColor: UIColor = .black {
         didSet {
             continueButton.backgroundColor = buttonBackgroundColor
@@ -45,14 +47,13 @@ public class WhatsNewViewController: UIViewController {
     }
 
     private let items: [WhatsNewItem]
-
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var stackView: UIStackView!
     @IBOutlet private weak var continueButton: UIButton!
 
     public init(items: [WhatsNewItem]) {
         self.items = items
-        super.init(nibName: "WhatsNew", bundle: Constants.bundle)
+        super.init(nibName: "WhatsNew", bundle: WhatsNew.bundle)
     }
 
     required public init?(coder aDecoder: NSCoder) {
@@ -65,7 +66,7 @@ public class WhatsNewViewController: UIViewController {
     }
 
     public func presentIfNeeded(on parentViewController: UIViewController) {
-        guard Constants.canPresent else { return }
+        guard WhatsNew.shouldPresent(with: presentationOption) else { return }
         parentViewController.present(self, animated: true, completion: nil)
     }
 
@@ -88,7 +89,7 @@ public class WhatsNewViewController: UIViewController {
     }
 
     @IBAction func `continue`() {
-        UserDefaults.standard.set(Constants.appVersion, forKey: Constants.userDefaultsKey)
+        WhatsNew.didShow()
         dismiss(animated: true, completion: onDismissal)
     }
 }
