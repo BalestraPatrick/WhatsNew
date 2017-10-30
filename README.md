@@ -5,8 +5,12 @@
 [![License](https://img.shields.io/cocoapods/l/WhatsNew.svg?style=flat)](http://cocoapods.org/pods/WhatsNew)
 [![Platform](https://img.shields.io/cocoapods/p/WhatsNew.svg?style=flat)](http://cocoapods.org/pods/WhatsNew)
 
+<p align="center"><img src ="example.png" width="300px"/></p>
+
 ## Description
-`WhatsNew` automates the displaying of new features when you update your app. Simply list your newest features (with optional icons), customize the appeareance and when to show it.
+`WhatsNew` automatically displays a short description of the new features when users update your app. This is similar to what happens in Apple's apps like Pages, Numbers, Keynote, iMovie and TestFlight. 
+
+Simply list your new features (with optional icons), customize the appeareance and when to show it (only on major updates for example).
 
 ## Usage
 Run the example project from the `Example` directory and check out `ViewController.swift`.
@@ -29,38 +33,24 @@ There are a bunch of customizable properties with relative documentation.
 ```swift
 /// Defines when to present the What's New view controller. Check the `PresentationOption` enum for more details.
 public var presentationOption: PresentationOption = .majorVersion
+
 /// Closure invoked when the user dismisses the view controller.
 public var onDismissal: (() -> Void)?
+
 /// Text of the top title.
-public var titleText: String = "What's New" {
-    didSet {
-        titleLabel.text = titleText
-    }
-}
+public var titleText: String = "What's New"
+
 /// Color of the top title.
-public var titleColor: UIColor = .black {
-    didSet {
-        titleLabel.textColor = titleColor
-    }
-}
+public var titleColor: UIColor = .black
+
 /// Text of the bottom button that dismisses the view controller.
-public var buttonText: String = "Continue" {
-    didSet {
-        continueButton.setTitle(buttonText, for: .normal)
-    }
-}
+public var buttonText: String = "Continue"
+
 /// Text color of the bottom button that dismisses the view controller.
-public var buttonTextColor: UIColor = .yellow {
-    didSet {
-        continueButton.setTitleColor(buttonTextColor, for: .normal)
-    }
-}
+public var buttonTextColor: UIColor = .yellow
+
 /// Background color of the bottom button that dismisses the view controller.
-public var buttonBackgroundColor: UIColor = .black {
-    didSet {
-        continueButton.backgroundColor = buttonBackgroundColor
-    }
-}
+public var buttonBackgroundColor: UIColor = .black
 ```
 
 ## Installation
@@ -75,7 +65,7 @@ pod 'WhatsNew'
 You can also use [Carthage](https://github.com/Carthage/Carthage) if you prefer. Add this line to your `Cartfile`.
 
 ```ruby
-github "BalestraPatrick/ValueStepper"
+github "BalestraPatrick/WhatsNew"
 ```
 ## Requirements
 iOS 9.3 and Swift 4.0 are required.
