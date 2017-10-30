@@ -23,38 +23,38 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="139"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dynamic-font" translatesAutoresizingMaskIntoConstraints="NO" id="YUp-od-Q3r">
-                    <rect key="frame" x="25" y="10" width="50" height="50"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="night" translatesAutoresizingMaskIntoConstraints="NO" id="YUp-od-Q3r">
+                    <rect key="frame" x="30" y="10" width="50" height="50"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="3Lc-El-pzp"/>
                         <constraint firstAttribute="width" secondItem="YUp-od-Q3r" secondAttribute="height" multiplier="1:1" id="HFl-ee-01d"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dynamic Font Size" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHq-c8-hDU">
-                    <rect key="frame" x="95" y="10" width="255" height="50"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feature Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHq-c8-hDU">
+                    <rect key="frame" x="100" y="10" width="245" height="50"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Automatically use your preferred font size specified in the Settings app." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Mz-s6-ygM">
-                    <rect key="frame" x="25" y="70" width="325" height="59"/>
+                    <rect key="frame" x="30" y="70" width="315" height="59"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="9Mz-s6-ygM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="25" id="3Um-qK-suN"/>
-                <constraint firstItem="DHq-c8-hDU" firstAttribute="height" secondItem="YUp-od-Q3r" secondAttribute="height" id="5aL-rC-XEO"/>
+                <constraint firstItem="9Mz-s6-ygM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="3Um-qK-suN"/>
+                <constraint firstItem="DHq-c8-hDU" firstAttribute="centerY" secondItem="YUp-od-Q3r" secondAttribute="centerY" id="53d-2a-qBf"/>
                 <constraint firstItem="9Mz-s6-ygM" firstAttribute="top" secondItem="YUp-od-Q3r" secondAttribute="bottom" constant="10" id="Eun-DV-JoX"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DHq-c8-hDU" secondAttribute="trailing" constant="25" id="Hnl-TZ-yyR"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DHq-c8-hDU" secondAttribute="trailing" constant="30" id="Hnl-TZ-yyR"/>
                 <constraint firstItem="YUp-od-Q3r" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="IOa-c3-Qfk"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="9Mz-s6-ygM" secondAttribute="trailing" constant="25" id="WOy-Wd-fAF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="9Mz-s6-ygM" secondAttribute="trailing" constant="30" id="WOy-Wd-fAF"/>
                 <constraint firstItem="DHq-c8-hDU" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="YLG-HO-eQw"/>
                 <constraint firstItem="DHq-c8-hDU" firstAttribute="leading" secondItem="YUp-od-Q3r" secondAttribute="trailing" constant="20" id="apE-HS-8dR"/>
-                <constraint firstItem="YUp-od-Q3r" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="25" id="ceU-dK-udx"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="9Mz-s6-ygM" secondAttribute="bottom" constant="10" id="kJN-Zk-hme"/>
+                <constraint firstItem="YUp-od-Q3r" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="xl6-a9-Ulb"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -62,6 +62,6 @@
         </view>
     </objects>
     <resources>
-        <image name="dynamic-font" width="16" height="16"/>
+        <image name="night" width="57" height="57"/>
     </resources>
 </document>

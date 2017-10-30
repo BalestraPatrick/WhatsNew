@@ -17,7 +17,9 @@ struct Constants {
 
 public class WhatsNewViewController: UIViewController {
 
+    /// Closure invoked when the user dismisses the view controller.
     public var onDismissal: (() -> Void)?
+
     private let items: [WhatsNewItem]
 
     @IBOutlet private weak var stackView: UIStackView!
