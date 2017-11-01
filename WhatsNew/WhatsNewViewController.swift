@@ -18,13 +18,13 @@ public class WhatsNewViewController: UIViewController {
     /// Text of the top title.
     public var titleText: String = "What's New" {
         didSet {
-            titleLabel.text = titleText
+            titleLabel?.text = titleText
         }
     }
     /// Color of the top title.
     public var titleColor: UIColor = .black {
         didSet {
-            titleLabel.textColor = titleColor
+            titleLabel?.textColor = titleColor
         }
     }
     /// Text color of the feature items.
@@ -32,19 +32,19 @@ public class WhatsNewViewController: UIViewController {
     /// Text of the bottom button that dismisses the view controller.
     public var buttonText: String = "Continue" {
         didSet {
-            continueButton.setTitle(buttonText, for: .normal)
+            continueButton?.setTitle(buttonText, for: .normal)
         }
     }
     /// Text color of the bottom button that dismisses the view controller.
     public var buttonTextColor: UIColor = .yellow {
         didSet {
-            continueButton.setTitleColor(buttonTextColor, for: .normal)
+            continueButton?.setTitleColor(buttonTextColor, for: .normal)
         }
     }
     /// Background color of the bottom button that dismisses the view controller.
     public var buttonBackgroundColor: UIColor = .black {
         didSet {
-            continueButton.backgroundColor = buttonBackgroundColor
+            continueButton?.backgroundColor = buttonBackgroundColor
         }
     }
 
