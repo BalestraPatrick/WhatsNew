@@ -16,7 +16,7 @@ public class WhatsNewViewController: UIViewController {
     /// Closure invoked when the user dismisses the view controller.
     public var onDismissal: (() -> Void)?
     /// Text of the top title.
-    public var titleText: String = "What's New" {
+    public var titleText: String = "What’s New" {
         didSet {
             titleLabel?.text = titleText
         }
