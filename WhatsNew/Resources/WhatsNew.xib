@@ -68,6 +68,7 @@
                         <constraint firstItem="dhQ-Nl-Wc2" firstAttribute="leading" secondItem="q0I-iV-mNw" secondAttribute="leading" id="hc2-bF-8vF"/>
                         <constraint firstAttribute="bottom" secondItem="dhQ-Nl-Wc2" secondAttribute="bottom" constant="10" id="kz6-MH-Hgx"/>
                         <constraint firstItem="dhQ-Nl-Wc2" firstAttribute="top" secondItem="q0I-iV-mNw" secondAttribute="top" id="l68-CR-wR8"/>
+                        <constraint firstItem="dhQ-Nl-Wc2" firstAttribute="width" secondItem="q0I-iV-mNw" secondAttribute="width" id="mVJ-OS-MJY"/>
                     </constraints>
                 </scrollView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wON-2C-CFX">
@@ -104,7 +105,6 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="dhQ-Nl-Wc2" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="3kn-60-URO"/>
                 <constraint firstItem="wON-2C-CFX" firstAttribute="top" secondItem="q0I-iV-mNw" secondAttribute="bottom" constant="-3" id="5DN-Xy-DJC"/>
                 <constraint firstItem="q0I-iV-mNw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="FqS-eV-cfG"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="q0I-iV-mNw" secondAttribute="trailing" id="Pjk-3B-DXJ"/>
