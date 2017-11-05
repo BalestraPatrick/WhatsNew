@@ -35,8 +35,8 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DFT-ZF-fEm">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's New" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKN-eO-Tbq">
-                                                    <rect key="frame" x="104.5" y="25" width="167.5" height="40"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's New" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKN-eO-Tbq">
+                                                    <rect key="frame" x="30" y="25" width="315" height="40"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -44,9 +44,9 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="fKN-eO-Tbq" firstAttribute="centerX" secondItem="DFT-ZF-fEm" secondAttribute="centerX" id="PXc-ND-jAu"/>
+                                                <constraint firstAttribute="trailing" secondItem="fKN-eO-Tbq" secondAttribute="trailing" constant="30" id="5is-kf-V6a"/>
+                                                <constraint firstItem="fKN-eO-Tbq" firstAttribute="leading" secondItem="DFT-ZF-fEm" secondAttribute="leading" constant="30" id="NTR-VO-vUO"/>
                                                 <constraint firstItem="fKN-eO-Tbq" firstAttribute="top" secondItem="DFT-ZF-fEm" secondAttribute="top" constant="25" id="VGS-on-KWg"/>
-                                                <constraint firstItem="fKN-eO-Tbq" firstAttribute="centerY" secondItem="DFT-ZF-fEm" secondAttribute="centerY" id="d9T-Z5-bNt"/>
                                                 <constraint firstAttribute="bottom" secondItem="fKN-eO-Tbq" secondAttribute="bottom" constant="25" id="dXX-9c-Pkx"/>
                                             </constraints>
                                         </view>
