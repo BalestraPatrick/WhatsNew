@@ -36,13 +36,13 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="bE0-3G-XlW" secondAttribute="trailing" constant="30" id="AHh-1E-b4G"/>
                 <constraint firstItem="bE0-3G-XlW" firstAttribute="top" secondItem="AnA-4W-WKK" secondAttribute="bottom" constant="10" id="B8C-TY-JvW"/>
                 <constraint firstItem="AnA-4W-WKK" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="E1D-KK-VbY"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="AnA-4W-WKK" secondAttribute="trailing" constant="30" id="Jdt-Sz-9UD"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="bE0-3G-XlW" secondAttribute="bottom" constant="10" id="MUx-lY-QPm"/>
                 <constraint firstItem="bE0-3G-XlW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="W2h-93-fkU"/>
                 <constraint firstItem="AnA-4W-WKK" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="oKL-Lf-lIe"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="bE0-3G-XlW" secondAttribute="trailing" constant="30" id="uDP-RC-apF"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
