@@ -30,13 +30,13 @@
                         <constraint firstAttribute="width" secondItem="YUp-od-Q3r" secondAttribute="height" multiplier="1:1" id="HFl-ee-01d"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feature Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHq-c8-hDU">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feature Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHq-c8-hDU">
                     <rect key="frame" x="100" y="10" width="245" height="50"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Automatically use your preferred font size specified in the Settings app." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Mz-s6-ygM">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Automatically use your preferred font size specified in the Settings app." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Mz-s6-ygM">
                     <rect key="frame" x="30" y="70" width="315" height="59"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                     <nil key="textColor"/>
@@ -46,14 +46,15 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="9Mz-s6-ygM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="3Um-qK-suN"/>
-                <constraint firstItem="DHq-c8-hDU" firstAttribute="centerY" secondItem="YUp-od-Q3r" secondAttribute="centerY" id="53d-2a-qBf"/>
-                <constraint firstItem="9Mz-s6-ygM" firstAttribute="top" secondItem="YUp-od-Q3r" secondAttribute="bottom" constant="10" id="Eun-DV-JoX"/>
+                <constraint firstItem="DHq-c8-hDU" firstAttribute="top" secondItem="YUp-od-Q3r" secondAttribute="top" id="91A-Gf-wNf"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DHq-c8-hDU" secondAttribute="trailing" constant="30" id="Hnl-TZ-yyR"/>
                 <constraint firstItem="YUp-od-Q3r" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="IOa-c3-Qfk"/>
+                <constraint firstItem="9Mz-s6-ygM" firstAttribute="top" secondItem="DHq-c8-hDU" secondAttribute="bottom" constant="10" id="Ito-zx-pxG"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="9Mz-s6-ygM" secondAttribute="trailing" constant="30" id="WOy-Wd-fAF"/>
                 <constraint firstItem="DHq-c8-hDU" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="YLG-HO-eQw"/>
                 <constraint firstItem="DHq-c8-hDU" firstAttribute="leading" secondItem="YUp-od-Q3r" secondAttribute="trailing" constant="20" id="apE-HS-8dR"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="9Mz-s6-ygM" secondAttribute="bottom" constant="10" id="kJN-Zk-hme"/>
+                <constraint firstItem="DHq-c8-hDU" firstAttribute="bottom" secondItem="YUp-od-Q3r" secondAttribute="bottom" priority="500" id="oFn-Uc-auh"/>
                 <constraint firstItem="YUp-od-Q3r" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="xl6-a9-Ulb"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
