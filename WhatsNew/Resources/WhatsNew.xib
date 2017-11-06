@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q0I-iV-mNw">
-                    <rect key="frame" x="0.0" y="20" width="375" height="560"/>
+                    <rect key="frame" x="0.0" y="20" width="375" height="558"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dhQ-Nl-Wc2">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
@@ -58,47 +58,35 @@
                         <constraint firstItem="dhQ-Nl-Wc2" firstAttribute="width" secondItem="q0I-iV-mNw" secondAttribute="width" id="mVJ-OS-MJY"/>
                     </constraints>
                 </scrollView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wON-2C-CFX">
-                    <rect key="frame" x="0.0" y="577" width="375" height="50"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sAB-F2-Y7K">
-                            <rect key="frame" x="30" y="2.5" width="315" height="45"/>
-                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="45" id="mOy-4M-bMK"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="SFUIDisplay-Bold" family="SF UI Display" pointSize="18"/>
-                            <state key="normal" title="Continue">
-                                <color key="titleColor" red="0.94509803920000002" green="0.92941176469999998" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="8"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="continue" destination="-1" eventType="touchUpInside" id="Jck-a8-q0C"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sAB-F2-Y7K">
+                    <rect key="frame" x="30" y="580" width="315" height="45"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="AMG-FJ-maW"/>
-                        <constraint firstItem="sAB-F2-Y7K" firstAttribute="leading" secondItem="wON-2C-CFX" secondAttribute="leading" constant="30" id="ER8-aR-ROL"/>
-                        <constraint firstItem="sAB-F2-Y7K" firstAttribute="centerY" secondItem="wON-2C-CFX" secondAttribute="centerY" id="sTb-Ga-Uuc"/>
-                        <constraint firstAttribute="trailing" secondItem="sAB-F2-Y7K" secondAttribute="trailing" constant="30" id="xM0-nR-Vhv"/>
+                        <constraint firstAttribute="height" constant="45" id="mOy-4M-bMK"/>
                     </constraints>
-                </view>
+                    <fontDescription key="fontDescription" name="SFUIDisplay-Bold" family="SF UI Display" pointSize="18"/>
+                    <state key="normal" title="Continue">
+                        <color key="titleColor" red="0.94509803920000002" green="0.92941176469999998" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="continue" destination="-1" eventType="touchUpInside" id="Jck-a8-q0C"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="wON-2C-CFX" firstAttribute="top" secondItem="q0I-iV-mNw" secondAttribute="bottom" constant="-3" id="5DN-Xy-DJC"/>
+                <constraint firstItem="sAB-F2-Y7K" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="1zg-9d-ZBx"/>
                 <constraint firstItem="q0I-iV-mNw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="FqS-eV-cfG"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="sAB-F2-Y7K" secondAttribute="bottom" constant="42" id="HJ2-xV-PwZ"/>
+                <constraint firstItem="sAB-F2-Y7K" firstAttribute="top" secondItem="q0I-iV-mNw" secondAttribute="bottom" constant="2" id="KnH-3p-EAT"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="q0I-iV-mNw" secondAttribute="trailing" id="Pjk-3B-DXJ"/>
-                <constraint firstItem="wON-2C-CFX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="RGG-vd-75u"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="wON-2C-CFX" secondAttribute="bottom" constant="40" id="jgD-LK-a0Z"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="sAB-F2-Y7K" secondAttribute="trailing" constant="30" id="i0N-1x-n2R"/>
                 <constraint firstItem="q0I-iV-mNw" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="kaZ-K2-UW3"/>
-                <constraint firstItem="wON-2C-CFX" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="rhx-Sm-qS0"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="34.5" y="53.5"/>
