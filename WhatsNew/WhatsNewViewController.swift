@@ -96,7 +96,7 @@ public class WhatsNewViewController: UIViewController {
     }
 
     @IBAction func `continue`() {
-        WhatsNew.didShow()
+        WhatsNew.markCurrentVersionAsPresented()
         dismiss(animated: true, completion: onDismissal)
     }
 }
