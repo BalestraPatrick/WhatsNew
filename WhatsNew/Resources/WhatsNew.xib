@@ -82,7 +82,9 @@
             <constraints>
                 <constraint firstItem="sAB-F2-Y7K" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="1zg-9d-ZBx"/>
                 <constraint firstItem="q0I-iV-mNw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="FqS-eV-cfG"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="sAB-F2-Y7K" secondAttribute="bottom" constant="42" id="HJ2-xV-PwZ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="sAB-F2-Y7K" secondAttribute="bottom" constant="42" id="HJ2-xV-PwZ">
+                    <variation key="heightClass=compact" constant="10"/>
+                </constraint>
                 <constraint firstItem="sAB-F2-Y7K" firstAttribute="top" secondItem="q0I-iV-mNw" secondAttribute="bottom" constant="2" id="KnH-3p-EAT"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="q0I-iV-mNw" secondAttribute="trailing" id="Pjk-3B-DXJ"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="sAB-F2-Y7K" secondAttribute="trailing" constant="30" id="i0N-1x-n2R"/>
