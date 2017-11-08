@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'WhatsNew'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'Showcase new features after an app update similar to Pages, Numbers and Keynote.'
 
 # This description is used to generate tags and improve search results.
@@ -20,7 +20,7 @@ Simply list your new features (with optional icons), customize the appeareance a
   s.source           = { :git => 'https://github.com/BalestraPatrick/WhatsNew.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/BalestraPatrick'
 
-  s.ios.deployment_target = '9.3'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'WhatsNew/**/*.swift'
   s.resources = 'WhatsNew/Resources/*.*'
