@@ -92,6 +92,7 @@ public class WhatsNewViewController: UIViewController {
         titleLabel.textColor = titleColor
         continueButton.setTitle(buttonText, for: .normal)
         continueButton.setTitleColor(buttonTextColor, for: .normal)
+        continueButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .callout)
         continueButton.backgroundColor = buttonBackgroundColor
     }
 
