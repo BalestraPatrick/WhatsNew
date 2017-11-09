@@ -68,7 +68,7 @@ You can also use [Carthage](https://github.com/Carthage/Carthage) if you prefer.
 github "BalestraPatrick/WhatsNew"
 ```
 ## Requirements
-iOS 9.3 and Swift 4.0 are required.
+iOS 9.0 and Swift 4.0 are required.
 
 ## Author
 
