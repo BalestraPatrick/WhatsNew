@@ -18,16 +18,15 @@ struct WhatsNew {
 
     static func shouldPresent(with option: PresentationOption) -> Bool {
         let previousAppVersion = UserDefaults.standard.string(forKey: userDefaultsKey)
+        
         let didUpdate = previousAppVersion != appVersion
-        // If main bundle was not updated, never present.
-        guard didUpdate else { return false }
+        
         // Choose based on the selected presentation option.
         switch option {
-        case .always: return true
+        case .debug: return true
+        case .never: return false
         case .majorVersion: return didChangeMajorVersion(previous: previousAppVersion, current: appVersion)
-        case .never:
-            markCurrentVersionAsPresented()
-            return false
+        case .always: return didUpdate
         }
     }
 
