@@ -27,6 +27,8 @@ let whatsNew = WhatsNewViewController(items: [
 whatsNew.presentIfNeeded(on: self)
 ```
 
+If you're using `WhatsNew` in your app, please let me know and I will make sure to add it to the list of apps that use this library! 
+
 ## Customizations
 There are a bunch of customizable properties with relative documentation.
 
