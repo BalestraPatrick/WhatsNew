@@ -45,4 +45,9 @@ class WhatsNewTests: XCTestCase {
         UserDefaults.standard.set("0.9", forKey: WhatsNew.userDefaultsKey)
         XCTAssertFalse(WhatsNew.shouldPresent(with: .never))
     }
+    
+    func testShouldPresent_WhenDebugPresentationOption() {
+        UserDefaults.standard.set("1.0", forKey: WhatsNew.userDefaultsKey)
+        XCTAssertTrue(WhatsNew.shouldPresent(with: .debug))
+    }
 }
