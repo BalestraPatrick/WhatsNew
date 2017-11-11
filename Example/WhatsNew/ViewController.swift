@@ -22,4 +22,8 @@ class ViewController: UIViewController {
         ])
         whatsNew.presentIfNeeded(on: self)
     }
+
+    @IBAction func clear(_ sender: Any) {
+        UserDefaults.standard.removeObject(forKey: "LatestAppVersionPresented")
+    }
 }
