@@ -64,6 +64,7 @@ public class WhatsNewViewController: UIViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
+        
         setUp(with: items)
     }
 
@@ -88,12 +89,24 @@ public class WhatsNewViewController: UIViewController {
             stackView.addArrangedSubview(view)
         }
 
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshFonts), name: NSNotification.Name.UIContentSizeCategoryDidChange, object: nil)
+
         titleLabel.text = titleText
         titleLabel.textColor = titleColor
         continueButton.setTitle(buttonText, for: .normal)
         continueButton.setTitleColor(buttonTextColor, for: .normal)
-        continueButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .callout)
         continueButton.backgroundColor = buttonBackgroundColor
+        refreshFonts()
+    }
+
+    @objc private func refreshFonts() {
+        if #available(iOS 10, *) {
+            titleLabel.font = UIFont.preferredFont(forTextStyle: .title1)
+            continueButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .callout)
+        } else {
+            titleLabel.font = UIFont.systemFont(ofSize: 26, weight: .bold)
+            continueButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        }
     }
 
     @IBAction func `continue`() {
