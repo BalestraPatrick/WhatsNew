@@ -25,5 +25,6 @@ class ViewController: UIViewController {
 
     @IBAction func clear(_ sender: Any) {
         UserDefaults.standard.removeObject(forKey: "LatestAppVersionPresented")
+        exit(0)
     }
 }
