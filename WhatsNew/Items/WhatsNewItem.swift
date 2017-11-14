@@ -32,7 +32,7 @@ public extension WhatsNewItemCustomizable {
         }
         // Use dynamic font size based on user preference if we're on > iOS 10.
         if #available(iOS 10, *) {
-            titleLabel.font = UIFont.preferredFont(forTextStyle: .headline)
+            titleLabel.font = UIFont.preferredFont(forTextStyle: .title2)
             subtitleLabel.font = UIFont.preferredFont(forTextStyle: .body)
         } else {
             titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
