@@ -13,13 +13,13 @@ class WhatsNewItemImageView: UIView, NibLoadable, WhatsNewItemCustomizable {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
 
-    func set(image: UIImage, title: String, subtitle: String, textColor: UIColor) {
+    func set(image: UIImage, title: String, subtitle: String, titleColor: UIColor, subtitleColor: UIColor) {
         NotificationCenter.default.addObserver(self, selector: #selector(refreshFonts), name: NSNotification.Name.UIContentSizeCategoryDidChange, object: nil)
         imageView.image = image
         titleLabel.text = title
-        titleLabel.textColor = textColor
+        titleLabel.textColor = titleColor
         subtitleLabel.text = subtitle
-        subtitleLabel.textColor = textColor
+        subtitleLabel.textColor = subtitleColor
         setDefaultFonts()
     }
     
