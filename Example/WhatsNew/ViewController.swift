@@ -20,6 +20,9 @@ class ViewController: UIViewController {
             WhatsNewItem.image(title: "Very Sleep", subtitle: "It helps you get more sleep by writing less code.", image: #imageLiteral(resourceName: "night")),
             WhatsNewItem.text(title: "Text Only", subtitle: "No icons? Just go with plain text."),
         ])
+        whatsNew.titleText = "What's New"
+        whatsNew.itemSubtitleColor = .darkGray
+        whatsNew.buttonText = "Continue"
         whatsNew.presentIfNeeded(on: self)
     }
 

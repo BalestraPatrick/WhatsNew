@@ -40,7 +40,7 @@ public class WhatsNewViewController: UIViewController {
         }
     }
     /// Subtitle color of the feature items.
-    public var itemSubtitleColor: UIColor = .darkGray {
+    public var itemSubtitleColor: UIColor = .black {
         didSet {
             setUp(with: items)
         }
@@ -121,7 +121,10 @@ public class WhatsNewViewController: UIViewController {
 
     private func setUp(with items: [WhatsNewItem]) {
         stackView?.arrangedSubviews.forEach {
-            stackView?.removeArrangedSubview($0)
+            if $0 is WhatsNewItemView {
+                stackView?.removeArrangedSubview($0)
+                $0.removeFromSuperview()
+            }
         }
         items.forEach { item in
             let view: UIView

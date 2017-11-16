@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WhatsNewItemTextView: UIView, NibLoadable {
+class WhatsNewItemTextView: UIView, NibLoadable, WhatsNewItemView {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
