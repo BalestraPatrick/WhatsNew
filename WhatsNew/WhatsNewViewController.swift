@@ -34,13 +34,29 @@ public class WhatsNewViewController: UIViewController {
         }
     }
     /// Title color of the feature items.
-    public var itemTitleColor: UIColor = .black
+    public var itemTitleColor: UIColor = .black {
+        didSet {
+            setUp(with: items)
+        }
+    }
     /// Subtitle color of the feature items.
-    public var itemSubtitleColor: UIColor = .darkGray
+    public var itemSubtitleColor: UIColor = .darkGray {
+        didSet {
+            setUp(with: items)
+        }
+    }
     /// Title font of the feature items
-    public var itemTitleFont: UIFont = UIFont.systemFont(ofSize: 20, weight: .bold)
+    public var itemTitleFont: UIFont = UIFont.systemFont(ofSize: 20, weight: .bold) {
+        didSet {
+            setUp(with: items)
+        }
+    }
     /// Subtitle font of the feature items
-    public var itemSubtitleFont: UIFont = UIFont.systemFont(ofSize: 16, weight: .regular)
+    public var itemSubtitleFont: UIFont = UIFont.systemFont(ofSize: 16, weight: .regular) {
+        didSet {
+            setUp(with: items)
+        }
+    }
     /// Text of the bottom button that dismisses the view controller.
     public var buttonText: String = "Continue" {
         didSet {
@@ -82,8 +98,8 @@ public class WhatsNewViewController: UIViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setUp(with: items)
+
+        configureUI()
     }
 
     public func presentIfNeeded(on parentViewController: UIViewController) {
@@ -91,7 +107,22 @@ public class WhatsNewViewController: UIViewController {
         parentViewController.present(self, animated: true, completion: nil)
     }
 
+    private func configureUI() {
+        titleLabel?.text = titleText
+        titleLabel?.textColor = titleColor
+        titleLabel?.font = titleFont
+        continueButton?.setTitle(buttonText, for: .normal)
+        continueButton?.setTitleColor(buttonTextColor, for: .normal)
+        continueButton?.titleLabel?.font = buttonFont
+        continueButton?.backgroundColor = buttonBackgroundColor
+
+        setUp(with: items)
+    }
+
     private func setUp(with items: [WhatsNewItem]) {
+        stackView?.arrangedSubviews.forEach {
+            stackView?.removeArrangedSubview($0)
+        }
         items.forEach { item in
             let view: UIView
             switch item {
@@ -104,20 +135,8 @@ public class WhatsNewViewController: UIViewController {
                 itemView.set(title: title, subtitle: subtitle, titleColor: itemTitleColor, subtitleColor: itemSubtitleColor, titleFont: itemTitleFont, subtitleFont: itemSubtitleFont)
                 view = itemView
             }
-            stackView.addArrangedSubview(view)
+            stackView?.addArrangedSubview(view)
         }
-
-        titleLabel.text = titleText
-        titleLabel.textColor = titleColor
-        continueButton.setTitle(buttonText, for: .normal)
-        continueButton.setTitleColor(buttonTextColor, for: .normal)
-        continueButton.backgroundColor = buttonBackgroundColor
-        refreshFonts()
-    }
-
-    @objc private func refreshFonts() {
-        titleLabel.font = titleFont
-        continueButton.titleLabel?.font = buttonFont
     }
 
     @IBAction func `continue`() {
