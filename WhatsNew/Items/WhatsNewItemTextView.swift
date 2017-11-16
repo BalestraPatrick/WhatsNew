@@ -7,21 +7,17 @@
 
 import UIKit
 
-class WhatsNewItemTextView: UIView, NibLoadable, WhatsNewItemCustomizable {
+class WhatsNewItemTextView: UIView, NibLoadable {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
 
-    func set(title: String, subtitle: String, titleColor: UIColor, subtitleColor: UIColor) {
-        NotificationCenter.default.addObserver(self, selector: #selector(refreshFonts), name: NSNotification.Name.UIContentSizeCategoryDidChange, object: nil)
+    func set(title: String, subtitle: String, titleColor: UIColor, subtitleColor: UIColor, titleFont: UIFont, subtitleFont: UIFont) {
         titleLabel.text = title
         titleLabel.textColor = titleColor
+        titleLabel.font = titleFont
         subtitleLabel.text = subtitle
         subtitleLabel.textColor = subtitleColor
-        setDefaultFonts()
-    }
-
-    @objc func refreshFonts() {
-        setDefaultFonts()
+        subtitleLabel.font = subtitleFont
     }
 }

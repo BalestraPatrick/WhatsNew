@@ -31,6 +31,10 @@ public class WhatsNewViewController: UIViewController {
     public var itemTitleColor: UIColor = .black
     /// Subtitle color of the feature items.
     public var itemSubtitleColor: UIColor = .darkGray
+    /// Title font of the feature items
+    public var itemTitleFont: UIFont = UIFont.systemFont(ofSize: 20, weight: .bold)
+    /// Subtitle font of the feature items
+    public var itemSubtitleFont: UIFont = UIFont.systemFont(ofSize: 16, weight: .regular)
     /// Text of the bottom button that dismisses the view controller.
     public var buttonText: String = "Continue" {
         didSet {
@@ -81,11 +85,11 @@ public class WhatsNewViewController: UIViewController {
             switch item {
             case .image(let title, let subtitle, let image):
                 let itemView = WhatsNewItemImageView.loadFromNib()
-                itemView.set(image: image, title: title, subtitle: subtitle, titleColor: itemTitleColor, subtitleColor: itemSubtitleColor)
+                itemView.set(image: image, title: title, subtitle: subtitle, titleColor: itemTitleColor, subtitleColor: itemSubtitleColor, titleFont: itemTitleFont, subtitleFont: itemSubtitleFont)
                 view = itemView
             case .text(let title, let subtitle):
                 let itemView = WhatsNewItemTextView.loadFromNib()
-                itemView.set(title: title, subtitle: subtitle, titleColor: itemTitleColor, subtitleColor: itemSubtitleColor)
+                itemView.set(title: title, subtitle: subtitle, titleColor: itemTitleColor, subtitleColor: itemSubtitleColor, titleFont: itemTitleFont, subtitleFont: itemSubtitleFont)
                 view = itemView
             }
             stackView.addArrangedSubview(view)
