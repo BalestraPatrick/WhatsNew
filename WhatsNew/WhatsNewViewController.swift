@@ -117,6 +117,8 @@ public class WhatsNewViewController: UIViewController {
         continueButton?.backgroundColor = buttonBackgroundColor
 
         setUp(with: items)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshFonts), name: .UIContentSizeCategoryDidChange, object: nil)
     }
 
     private func setUp(with items: [WhatsNewItem]) {
@@ -139,6 +141,16 @@ public class WhatsNewViewController: UIViewController {
                 view = itemView
             }
             stackView?.addArrangedSubview(view)
+        }
+    }
+
+    @objc private func refreshFonts() {
+        if #available(iOS 10, *) {
+            titleLabel.font = UIFont.preferredFont(forTextStyle: .title1)
+            continueButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .callout)
+            let fontDescriptor = UIFont.preferredFont(forTextStyle: .headline).fontDescriptor
+            itemTitleFont = UIFont(descriptor: fontDescriptor, size: fontDescriptor.pointSize + 5)
+            itemSubtitleFont = UIFont.preferredFont(forTextStyle: .body)
         }
     }
 
