@@ -27,6 +27,12 @@ public class WhatsNewViewController: UIViewController {
             titleLabel?.textColor = titleColor
         }
     }
+    /// Font of the top title.
+    public var titleFont: UIFont = UIFont.systemFont(ofSize: 26, weight: .bold) {
+        didSet {
+            titleLabel?.font = titleFont
+        }
+    }
     /// Title color of the feature items.
     public var itemTitleColor: UIColor = .black
     /// Subtitle color of the feature items.
@@ -45,6 +51,12 @@ public class WhatsNewViewController: UIViewController {
     public var buttonTextColor: UIColor = .yellow {
         didSet {
             continueButton?.setTitleColor(buttonTextColor, for: .normal)
+        }
+    }
+    /// Text font of the bottom button that dismisses the view controller.
+    public var buttonFont: UIFont = UIFont.systemFont(ofSize: 16, weight: .regular) {
+        didSet {
+            continueButton?.titleLabel?.font = buttonFont
         }
     }
     /// Background color of the bottom button that dismisses the view controller.
@@ -95,8 +107,6 @@ public class WhatsNewViewController: UIViewController {
             stackView.addArrangedSubview(view)
         }
 
-        NotificationCenter.default.addObserver(self, selector: #selector(refreshFonts), name: NSNotification.Name.UIContentSizeCategoryDidChange, object: nil)
-
         titleLabel.text = titleText
         titleLabel.textColor = titleColor
         continueButton.setTitle(buttonText, for: .normal)
@@ -106,13 +116,8 @@ public class WhatsNewViewController: UIViewController {
     }
 
     @objc private func refreshFonts() {
-        if #available(iOS 10, *) {
-            titleLabel.font = UIFont.preferredFont(forTextStyle: .title1)
-            continueButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .callout)
-        } else {
-            titleLabel.font = UIFont.systemFont(ofSize: 26, weight: .bold)
-            continueButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        }
+        titleLabel.font = titleFont
+        continueButton.titleLabel?.font = buttonFont
     }
 
     @IBAction func `continue`() {
