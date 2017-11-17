@@ -98,7 +98,6 @@ public class WhatsNewViewController: UIViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-
         configureUI()
     }
 
@@ -108,6 +107,13 @@ public class WhatsNewViewController: UIViewController {
     }
 
     private func configureUI() {
+        // Use dynamic font size if available
+        if #available(iOS 10, *) {
+            if let titleFontDescriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .title2).withSymbolicTraits(.traitBold) {
+                titleFont = UIFont(descriptor: titleFontDescriptor, size: 0)
+            }
+            itemSubtitleFont = UIFont.preferredFont(forTextStyle: .body)
+        }
         titleLabel?.text = titleText
         titleLabel?.textColor = titleColor
         titleLabel?.font = titleFont
