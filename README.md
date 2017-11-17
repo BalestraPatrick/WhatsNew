@@ -34,22 +34,40 @@ There are a bunch of customizable properties with relative documentation.
 
 ```swift
 /// Defines when to present the What's New view controller. Check the `PresentationOption` enum for more details.
-public var presentationOption: PresentationOption = .majorVersion
+public var presentationOption: PresentationOption = .always
 
 /// Closure invoked when the user dismisses the view controller.
 public var onDismissal: (() -> Void)?
 
 /// Text of the top title.
-public var titleText: String = "What's New"
+public var titleText: String = "What’s New"
 
 /// Color of the top title.
 public var titleColor: UIColor = .black
+
+/// Font of the top title.
+public var titleFont: UIFont = UIFont.systemFont(ofSize: 26, weight: .bold)
+
+/// Title color of the feature items.
+public var itemTitleColor: UIColor = .black
+
+/// Subtitle color of the feature items.
+public var itemSubtitleColor: UIColor = .black
+
+/// Title font of the feature items
+public var itemTitleFont: UIFont = UIFont.systemFont(ofSize: 20, weight: .bold)
+
+/// Subtitle font of the feature items
+public var itemSubtitleFont: UIFont = UIFont.systemFont(ofSize: 16, weight: .regular)
 
 /// Text of the bottom button that dismisses the view controller.
 public var buttonText: String = "Continue"
 
 /// Text color of the bottom button that dismisses the view controller.
 public var buttonTextColor: UIColor = .yellow
+
+/// Text font of the bottom button that dismisses the view controller.
+public var buttonFont: UIFont = UIFont.systemFont(ofSize: 16, weight: .regular)
 
 /// Background color of the bottom button that dismisses the view controller.
 public var buttonBackgroundColor: UIColor = .black
