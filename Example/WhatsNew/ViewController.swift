@@ -25,7 +25,6 @@ class ViewController: UIViewController {
             whatsNew.itemSubtitleColor = .darkGray
             whatsNew.buttonText = "Continue"
             present(whatsNew, animated: true, completion: nil)
-            //whatsNew.presentIfNeeded(on: self)
         }
     }
 
