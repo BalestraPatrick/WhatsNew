@@ -7,16 +7,17 @@
 
 import Foundation
 
-struct WhatsNew {
+public struct WhatsNew {
     static let bundle = Bundle(for: WhatsNewViewController.self)
     static let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
     static let userDefaultsKey = "LatestAppVersionPresented"
 
     static func markCurrentVersionAsPresented() {
         UserDefaults.standard.set(appVersion, forKey: userDefaultsKey)
+        UserDefaults.standard.synchronize()
     }
 
-    static func shouldPresent(with option: PresentationOption) -> Bool {
+    public static func shouldPresent(with option: PresentationOption = .always) -> Bool {
         let previousAppVersion = UserDefaults.standard.string(forKey: userDefaultsKey)
         
         let didUpdate = previousAppVersion != appVersion
