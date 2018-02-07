@@ -87,6 +87,8 @@ You can also use [Carthage](https://github.com/Carthage/Carthage) if you prefer.
 ```ruby
 github "BalestraPatrick/WhatsNew"
 ```
+
+Android version available [here](https://github.com/TonnyL/WhatsNew).
 ## Requirements
 iOS 9.0 and Swift 4.0 are required.
 
