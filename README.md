@@ -38,7 +38,7 @@ There are a bunch of customizable properties with relative documentation.
 
 ```swift
 /// Defines when to present the What's New view controller. Check the `PresentationOption` enum for more details.
-public var presentationOption: PresentationOption = .always
+public var presentationOption: PresentationOption = .onUpdate
 
 /// Closure invoked when the user dismisses the view controller.
 public var onDismissal: (() -> Void)?
