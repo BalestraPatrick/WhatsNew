@@ -14,7 +14,6 @@ public struct WhatsNew {
 
     static func markCurrentVersionAsPresented() {
         UserDefaults.standard.set(appVersion, forKey: userDefaultsKey)
-        UserDefaults.standard.synchronize()
     }
 
     public static func shouldPresent(with option: PresentationOption = .always) -> Bool {
