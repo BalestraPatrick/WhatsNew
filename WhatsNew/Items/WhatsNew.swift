@@ -9,31 +9,38 @@ import Foundation
 
 public struct WhatsNew {
     static let bundle = Bundle(for: WhatsNewViewController.self)
-    static let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
-    static let userDefaultsKey = "LatestAppVersionPresented"
+    public static let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+    static let userDefaultsKeyLatestAppVersionPresented = "LatestAppVersionPresented"
 
     static func markCurrentVersionAsPresented() {
-        UserDefaults.standard.set(appVersion, forKey: userDefaultsKey)
-        UserDefaults.standard.synchronize()
+        UserDefaults.standard.set(appVersion, forKey: userDefaultsKeyLatestAppVersionPresented)
     }
 
-    public static func shouldPresent(with option: PresentationOption = .always) -> Bool {
-        let previousAppVersion = UserDefaults.standard.string(forKey: userDefaultsKey)
+    public static func shouldPresent(with option: PresentationOption = .onUpdate, currentVersion: String? = appVersion) -> Bool {
+        guard let currentAppVersion = currentVersion else { return false }
+        let previousAppVersion = UserDefaults.standard.string(forKey: userDefaultsKeyLatestAppVersionPresented)
+        let didUpdate = previousAppVersion != currentAppVersion
         
-        let didUpdate = previousAppVersion != appVersion
-        
-        // Choose based on the selected presentation option.
         switch option {
         case .debug: return true
         case .never: return false
-        case .majorVersion: return didChangeMajorVersion(previous: previousAppVersion, current: appVersion)
-        case .always: return didUpdate
+        case .onMajorUpdate: return didUpdate && isMajorVersion(version: currentAppVersion)
+        case .onUpdate: return didUpdate
         }
     }
-
-    private static func didChangeMajorVersion(previous: String?, current: String?) -> Bool {
-        guard let previousMajor = previous?.split(separator: ".").first, let previousMajorInt = Int(previousMajor) else { return false }
-        guard let currentMajor = current?.split(separator: ".").first, let currentMajorInt = Int(currentMajor) else { return false }
-        return currentMajorInt > previousMajorInt
+    
+    private static func isMajorVersion(version: String) -> Bool {
+        let components = version.split(separator: ".")
+        // ensure minor version or hotfix version is either nil or 0
+        
+        guard components.count > 1 else { return true }
+        let minorUpdate = components[1]
+        guard minorUpdate == "0" else { return false }
+        
+        guard components.count > 2 else { return true }
+        let hotfixUpdate = components[2]
+        guard hotfixUpdate == "0" else { return false }
+        
+        return true
     }
 }

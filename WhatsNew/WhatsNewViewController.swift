@@ -12,7 +12,7 @@ import UIKit
 public class WhatsNewViewController: UIViewController {
 
     /// Defines when to present the What's New view controller. Check the `PresentationOption` enum for more details.
-    public var presentationOption: PresentationOption = .always
+    public var presentationOption: PresentationOption = .onUpdate
     /// Closure invoked when the user dismisses the view controller.
     public var onDismissal: (() -> Void)?
     /// Text of the top title.
