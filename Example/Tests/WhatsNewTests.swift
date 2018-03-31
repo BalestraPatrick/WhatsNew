@@ -18,7 +18,7 @@ class WhatsNewTests: XCTestCase {
     }
     
     func testShouldNotPresent_WhenCurrentVersionIsUndefined() {
-        XCTAssertFalse(WhatsNew.shouldPresent(with: .always, currentVersion: nil))
+        XCTAssertFalse(WhatsNew.shouldPresent(with: .onUpdate, currentVersion: nil))
     }
     
     
@@ -26,13 +26,13 @@ class WhatsNewTests: XCTestCase {
     
     
     func testShouldPresentAlways_WhenFirstVersionInstalled() {
-        XCTAssertTrue(WhatsNew.shouldPresent(with: .always, currentVersion: "1.0"))
+        XCTAssertTrue(WhatsNew.shouldPresent(with: .onUpdate, currentVersion: "1.0"))
     }
 
     func testShouldPresentAlways_WhenUpdatingVersion() {
         UserDefaults.standard.set("1.0", forKey: WhatsNew.userDefaultsKeyLatestAppVersionPresented)
-        XCTAssertTrue(WhatsNew.shouldPresent(with: .always, currentVersion: "1.1"))
-        XCTAssertTrue(WhatsNew.shouldPresent(with: .always, currentVersion: "1.0.1"))
+        XCTAssertTrue(WhatsNew.shouldPresent(with: .onUpdate, currentVersion: "1.1"))
+        XCTAssertTrue(WhatsNew.shouldPresent(with: .onUpdate, currentVersion: "1.0.1"))
     }
 
 
@@ -40,15 +40,15 @@ class WhatsNewTests: XCTestCase {
     
     func testShouldPresentMajorVersion_WhenUpdatingVersionMajor() {
         UserDefaults.standard.set("1.9", forKey: WhatsNew.userDefaultsKeyLatestAppVersionPresented)
-        XCTAssertTrue(WhatsNew.shouldPresent(with: .majorVersion, currentVersion: "2.0"))
-        XCTAssertTrue(WhatsNew.shouldPresent(with: .majorVersion, currentVersion: "2.0.0"))
+        XCTAssertTrue(WhatsNew.shouldPresent(with: .onMajorUpdate, currentVersion: "2.0"))
+        XCTAssertTrue(WhatsNew.shouldPresent(with: .onMajorUpdate, currentVersion: "2.0.0"))
     }
 
     func testShouldNotPresentMajorVersion_WhenUpdatingVersionMinor() {
         UserDefaults.standard.set("1.0", forKey: WhatsNew.userDefaultsKeyLatestAppVersionPresented)
-        XCTAssertFalse(WhatsNew.shouldPresent(with: .majorVersion, currentVersion: "1.1"))
-        XCTAssertFalse(WhatsNew.shouldPresent(with: .majorVersion, currentVersion: "1.0.1"))
-        XCTAssertFalse(WhatsNew.shouldPresent(with: .majorVersion, currentVersion: "2.1"))
+        XCTAssertFalse(WhatsNew.shouldPresent(with: .onMajorUpdate, currentVersion: "1.1"))
+        XCTAssertFalse(WhatsNew.shouldPresent(with: .onMajorUpdate, currentVersion: "1.0.1"))
+        XCTAssertFalse(WhatsNew.shouldPresent(with: .onMajorUpdate, currentVersion: "2.1"))
     }
     
     

@@ -16,7 +16,7 @@ public struct WhatsNew {
         UserDefaults.standard.set(appVersion, forKey: userDefaultsKeyLatestAppVersionPresented)
     }
 
-    public static func shouldPresent(with option: PresentationOption = .always, currentVersion: String? = appVersion) -> Bool {
+    public static func shouldPresent(with option: PresentationOption = .onUpdate, currentVersion: String? = appVersion) -> Bool {
         guard let currentAppVersion = currentVersion else { return false }
         let previousAppVersion = UserDefaults.standard.string(forKey: userDefaultsKeyLatestAppVersionPresented)
         let didUpdate = previousAppVersion != currentAppVersion
@@ -24,8 +24,8 @@ public struct WhatsNew {
         switch option {
         case .debug: return true
         case .never: return false
-        case .majorVersion: return didUpdate && isMajorVersion(version: currentAppVersion)
-        case .always: return didUpdate
+        case .onMajorUpdate: return didUpdate && isMajorVersion(version: currentAppVersion)
+        case .onUpdate: return didUpdate
         }
     }
     
