@@ -19,7 +19,7 @@ public struct WhatsNew {
     public static func shouldPresent(with option: PresentationOption = .always, currentVersion: String? = appVersion) -> Bool {
         guard let currentAppVersion = currentVersion else { return false }
         let previousAppVersion = UserDefaults.standard.string(forKey: userDefaultsKeyLatestAppVersionPresented)
-        let didUpdate = previousAppVersion != appVersion
+        let didUpdate = previousAppVersion != currentAppVersion
         
         switch option {
         case .debug: return true
