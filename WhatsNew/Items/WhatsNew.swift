@@ -9,15 +9,15 @@ import Foundation
 
 public struct WhatsNew {
     static let bundle = Bundle(for: WhatsNewViewController.self)
-    static let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+    public static let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
     static let userDefaultsKey = "LatestAppVersionPresented"
 
     static func markCurrentVersionAsPresented() {
         UserDefaults.standard.set(appVersion, forKey: userDefaultsKey)
     }
 
-    public static func shouldPresent(with option: PresentationOption = .always) -> Bool {
-        guard let currentAppVersion = appVersion else { return false }
+    public static func shouldPresent(with option: PresentationOption = .always, currentVersion: String? = appVersion) -> Bool {
+        guard let currentAppVersion = currentVersion else { return false }
         let previousAppVersion = UserDefaults.standard.string(forKey: userDefaultsKey)
         let didUpdate = previousAppVersion != appVersion
         
