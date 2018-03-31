@@ -18,22 +18,30 @@ public struct WhatsNew {
     }
 
     public static func shouldPresent(with option: PresentationOption = .always) -> Bool {
+        guard let currentAppVersion = appVersion else { return false }
         let previousAppVersion = UserDefaults.standard.string(forKey: userDefaultsKey)
-        
         let didUpdate = previousAppVersion != appVersion
         
-        // Choose based on the selected presentation option.
         switch option {
         case .debug: return true
         case .never: return false
-        case .majorVersion: return didChangeMajorVersion(previous: previousAppVersion, current: appVersion)
+        case .majorVersion: return didUpdate && isMajorVersion(version: currentAppVersion)
         case .always: return didUpdate
         }
     }
-
-    private static func didChangeMajorVersion(previous: String?, current: String?) -> Bool {
-        guard let previousMajor = previous?.split(separator: ".").first, let previousMajorInt = Int(previousMajor) else { return false }
-        guard let currentMajor = current?.split(separator: ".").first, let currentMajorInt = Int(currentMajor) else { return false }
-        return currentMajorInt > previousMajorInt
+    
+    private static func isMajorVersion(version: String) -> Bool {
+        let components = version.split(separator: ".")
+        // ensure minor version or hotfix version is either nil or 0
+        
+        guard components.count > 1 else { return true }
+        let minorUpdate = components[1]
+        guard minorUpdate == "0" else { return false }
+        
+        guard components.count > 2 else { return true }
+        let hotfixUpdate = components[2]
+        guard hotfixUpdate == "0" else { return false }
+        
+        return true
     }
 }
