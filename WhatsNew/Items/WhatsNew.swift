@@ -8,8 +8,8 @@
 import Foundation
 
 public struct WhatsNew {
-    static let bundle = Bundle(for: WhatsNewViewController.self)
     public static let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+    static let bundle = Bundle(for: WhatsNewViewController.self)
     static let userDefaultsKeyLatestAppVersionPresented = "LatestAppVersionPresented"
 
     static func markCurrentVersionAsPresented() {
