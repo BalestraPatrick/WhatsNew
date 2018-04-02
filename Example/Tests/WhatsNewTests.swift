@@ -21,10 +21,6 @@ class WhatsNewTests: XCTestCase {
         XCTAssertFalse(WhatsNew.shouldPresent(with: .always, currentVersion: nil))
     }
     
-    
-    
-    
-    
     func testShouldPresentAlways_WhenFirstVersionInstalled() {
         XCTAssertTrue(WhatsNew.shouldPresent(with: .always, currentVersion: "1.0"))
     }
@@ -34,9 +30,6 @@ class WhatsNewTests: XCTestCase {
         XCTAssertTrue(WhatsNew.shouldPresent(with: .always, currentVersion: "1.1"))
         XCTAssertTrue(WhatsNew.shouldPresent(with: .always, currentVersion: "1.0.1"))
     }
-
-
-    
     
     func testShouldPresentMajorVersion_WhenUpdatingVersionMajor() {
         UserDefaults.standard.set("1.9", forKey: WhatsNew.userDefaultsKeyLatestAppVersionPresented)
@@ -50,9 +43,6 @@ class WhatsNewTests: XCTestCase {
         XCTAssertFalse(WhatsNew.shouldPresent(with: .majorVersion, currentVersion: "1.0.1"))
         XCTAssertFalse(WhatsNew.shouldPresent(with: .majorVersion, currentVersion: "2.1"))
     }
-    
-    
-    
 
     func testShouldNotPresentNever_WhenUpdatingVersion() {
         UserDefaults.standard.set("1.0", forKey: WhatsNew.userDefaultsKeyLatestAppVersionPresented)
@@ -60,7 +50,6 @@ class WhatsNewTests: XCTestCase {
         XCTAssertFalse(WhatsNew.shouldPresent(with: .never, currentVersion: nil))
         XCTAssertFalse(WhatsNew.shouldPresent(with: .never, currentVersion: "2.0"))
     }
-    
     
     func testShouldPresent_WhenDebugPresentationOption() {
         XCTAssertTrue(WhatsNew.shouldPresent(with: .debug, currentVersion: "2.4"))
