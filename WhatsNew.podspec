@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'WhatsNew'
-  s.version          = '0.4.1'
+  s.version          = '0.4.2'
   s.summary          = 'Showcase new features after an app update similar to Pages, Numbers and Keynote.'
 
 # This description is used to generate tags and improve search results.
