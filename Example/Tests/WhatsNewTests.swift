@@ -47,7 +47,6 @@ class WhatsNewTests: XCTestCase {
         UserDefaults.standard.set("1.0", forKey: WhatsNew.userDefaultsKeyLatestAppVersionPresented)
         XCTAssertFalse(WhatsNew.shouldPresent(with: .majorVersion, currentVersion: "1.1"))
         XCTAssertFalse(WhatsNew.shouldPresent(with: .majorVersion, currentVersion: "1.0.1"))
-        XCTAssertFalse(WhatsNew.shouldPresent(with: .majorVersion, currentVersion: "2.1"))
     }
 
     func testShouldNotPresentNever_WhenUpdatingVersion() {
