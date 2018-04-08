@@ -20,27 +20,19 @@ public struct WhatsNew {
         guard let currentAppVersion = currentVersion else { return false }
         let previousAppVersion = UserDefaults.standard.string(forKey: userDefaultsKeyLatestAppVersionPresented)
         let didUpdate = previousAppVersion != currentAppVersion
-        
         switch option {
         case .debug: return true
         case .never: return false
-        case .majorVersion: return didUpdate && isMajorVersion(version: currentAppVersion)
+        case .majorVersion: return didUpdate && didChangeMajorVersion(previous: previousAppVersion, current: currentAppVersion)
         case .always: return didUpdate
         }
     }
-    
-    private static func isMajorVersion(version: String) -> Bool {
-        let components = version.split(separator: ".")
-        // ensure minor version or hotfix version is either nil or 0
-        
-        guard components.count > 1 else { return true }
-        let minorUpdate = components[1]
-        guard minorUpdate == "0" else { return false }
-        
-        guard components.count > 2 else { return true }
-        let hotfixUpdate = components[2]
-        guard hotfixUpdate == "0" else { return false }
-        
-        return true
+
+    private static func didChangeMajorVersion(previous: String?, current: String?) -> Bool {
+        // If there is no previous installation, return true.
+        guard let previous = previous else { return true }
+        guard let previousMajor = previous.split(separator: ".").first, let previousMajorInt = Int(previousMajor) else { return false }
+        guard let currentMajor = current?.split(separator: ".").first, let currentMajorInt = Int(currentMajor) else { return false }
+        return currentMajorInt > previousMajorInt
     }
 }
