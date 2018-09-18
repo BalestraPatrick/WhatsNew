@@ -124,7 +124,7 @@ public class WhatsNewViewController: UIViewController {
 
         setUp(with: items)
 
-        NotificationCenter.default.addObserver(self, selector: #selector(refreshFonts), name: .UIContentSizeCategoryDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshFonts), name: UIContentSizeCategory.didChangeNotification, object: nil)
     }
 
     private func setUp(with items: [WhatsNewItem]) {

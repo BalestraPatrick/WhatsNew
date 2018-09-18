@@ -12,7 +12,7 @@ protocol NibLoadable: class { }
 extension NibLoadable where Self: UIView {
 
     static func loadFromNib(owner: Self = Self()) -> Self {
-        let layoutAttributes: [NSLayoutAttribute] = [.top, .leading, .bottom, .trailing]
+        let layoutAttributes: [NSLayoutConstraint.Attribute] = [.top, .leading, .bottom, .trailing]
         for view in UINib(nibName: String(describing: self), bundle: Bundle(for: self)).instantiate(withOwner: owner, options: nil) {
             if let view = view as? UIView {
                 view.translatesAutoresizingMaskIntoConstraints = false
