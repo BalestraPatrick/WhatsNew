@@ -31,6 +31,7 @@ Some of the apps using `WhatsNew` in production are:
 - [Blocknow](https://itunes.apple.com/app/blocknow/id1350568499)
 - [Bittracker](http://appstore.com/BittrackerCryptoCoinTracker)
 - [Views • News Redesigned](https://itunes.apple.com/us/app/views-news-redesigned/id1322754821?mt=8)
+- [Pisth - SSH Client](https://itunes.apple.com/us/app/pisth/id1331070425?ls=1&mt=8)
 
 If you're using `WhatsNew` in your app, please let me know and I will make sure to add it to the list of apps that use this library! 
 
