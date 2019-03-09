@@ -33,6 +33,12 @@ public class WhatsNewViewController: UIViewController {
             titleLabel?.font = titleFont
         }
     }
+    /// Tint color of the feature item image, if one exists.
+    public var itemImageTintColor: UIColor? = nil {
+        didSet {
+            setUp(with: items)
+        }
+    }
     /// Title color of the feature items.
     public var itemTitleColor: UIColor = .black {
         didSet {
@@ -139,6 +145,9 @@ public class WhatsNewViewController: UIViewController {
             switch item {
             case .image(let title, let subtitle, let image):
                 let itemView = WhatsNewItemImageView.loadFromNib()
+                if let imageTintColor = itemImageTintColor {
+                    itemView.imageView.tintColor = imageTintColor
+                }
                 itemView.set(image: image, title: title, subtitle: subtitle, titleColor: itemTitleColor, subtitleColor: itemSubtitleColor, titleFont: itemTitleFont, subtitleFont: itemSubtitleFont)
                 view = itemView
             case .text(let title, let subtitle):
