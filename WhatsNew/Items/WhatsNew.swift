@@ -12,7 +12,7 @@ public struct WhatsNew {
     static let bundle = Bundle(for: WhatsNewViewController.self)
     static let userDefaultsKeyLatestAppVersionPresented = "LatestAppVersionPresented"
 
-    static func markCurrentVersionAsPresented() {
+    public static func markCurrentVersionAsPresented() {
         UserDefaults.standard.set(appVersion, forKey: userDefaultsKeyLatestAppVersionPresented)
     }
 

@@ -32,15 +32,18 @@ Some of the apps using `WhatsNew` in production are:
 - [Bittracker](http://appstore.com/BittrackerCryptoCoinTracker)
 - [Views • News Redesigned](https://itunes.apple.com/us/app/views-news-redesigned/id1322754821?mt=8)
 - [Pisth - SSH Client](https://itunes.apple.com/us/app/pisth/id1331070425?ls=1&mt=8)
+- [TimeFinder - Hourly Planner](https://itunes.apple.com/us/app/timefinder-hourly-planner/id1347447233?mt=8)
 
 If you're using `WhatsNew` in your app, please let me know and I will make sure to add it to the list of apps that use this library! 
 
 ## Customizations
-There are a bunch of customizable properties with relative documentation.
+There are a bunch of customizable properties with corresponding documentation.
 
 ```swift
 /// Defines when to present the What's New view controller. Check the `PresentationOption` enum for more details.
 public var presentationOption: PresentationOption = .always
+
+Additionally, WhatsNew can optionally be configured to appear for only existing users (i.e. excluding fresh installations) by calling WhatsNew.markCurrentVersionAsPresented() during your app’s first initialization before whatsNew.presentIfNeeded(on: self) is called.
 
 /// Closure invoked when the user dismisses the view controller.
 public var onDismissal: (() -> Void)?
