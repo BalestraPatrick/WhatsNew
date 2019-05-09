@@ -43,7 +43,8 @@ There are a bunch of customizable properties with corresponding documentation.
 /// Defines when to present the What's New view controller. Check the `PresentationOption` enum for more details.
 public var presentationOption: PresentationOption = .always
 
-Additionally, WhatsNew can optionally be configured to appear for only existing users (i.e. excluding fresh installations) by calling WhatsNew.markCurrentVersionAsPresented() during your app’s first initialization before whatsNew.presentIfNeeded(on: self) is called.
+/// Call this method to mark the current version as presented. This is useful in case you want to avoid showing WhatsNew to first-time users of the app for example.
+public static func markCurrentVersionAsPresented()
 
 /// Closure invoked when the user dismisses the view controller.
 public var onDismissal: (() -> Void)?
