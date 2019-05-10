@@ -40,11 +40,11 @@ If you're using `WhatsNew` in your app, please let me know and I will make sure 
 There are a bunch of customizable properties with corresponding documentation.
 
 ```swift
+/// This method allows marking the current version as presented. This is useful in case you want to avoid showing WhatsNew to first-time users for example.
+public static func markCurrentVersionAsPresented()
+
 /// Defines when to present the What's New view controller. Check the `PresentationOption` enum for more details.
 public var presentationOption: PresentationOption = .always
-
-/// Call this method to mark the current version as presented. This is useful in case you want to avoid showing WhatsNew to first-time users of the app for example.
-public static func markCurrentVersionAsPresented()
 
 /// Closure invoked when the user dismisses the view controller.
 public var onDismissal: (() -> Void)?
